@@ -41,4 +41,4 @@ jobs:
             npm i --force
             npx prisma generate
             npm run build
-            pm2 restart Fastify node server
+            pm2 restart Fastify
