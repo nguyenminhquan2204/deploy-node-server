@@ -22,7 +22,7 @@ jobs:
       - run: npm run build
       - name: send telegram message on push
         if: success()
-        uses: actions/telegram-action@master
+        uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -34,7 +34,7 @@ jobs:
             See changes: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
       - name: send telegram message on push
         if: failure()
-        uses: actions/telegram-action@master
+        uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -68,7 +68,7 @@ jobs:
             pm2 restart Fastify
       - name: send telegram message after deploy
         if: success()
-        uses: actions/telegram-action@master
+        uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -80,7 +80,7 @@ jobs:
             See changes: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
       - name: send telegram message after deploy
         if: failure()
-        uses: actions/telegram-action@master
+        uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
